@@ -14,6 +14,7 @@ class NoteController {
         // Create test data
         createNote(withText: "Walk the dog")
         createNote(withText: "Eat lunch!")
+        createNote(withText: "In a storyboard-based application, you will often want to do a little preparation before navigation")
     }
     
     func createNote(withText text: String) {

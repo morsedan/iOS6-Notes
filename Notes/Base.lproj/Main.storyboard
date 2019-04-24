@@ -107,6 +107,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Quick Notes" id="Y5O-EC-arx"/>
                     <connections>
+                        <outlet property="notesTextView" destination="aHZ-NL-FuK" id="PgB-QP-Pmw"/>
                         <outlet property="tableView" destination="a8u-Qz-Yu3" id="TXy-7z-MDJ"/>
                     </connections>
                 </viewController>

@@ -23,6 +23,19 @@ class NotesViewController: UIViewController { // , UITableViewDelegate {
     @IBAction func saveButtonPressed(_ sender: Any) {
         print("save")
         
+        // 1. get the text if it's present
+        // 2. create a new note
+        // 3. update the display
+        
+//        guard let text = notesTextView.text else { return }
+        guard let text = notesTextView.text,
+            !text.isEmpty else { return }
+
+        noteController.createNote(withText: text)
+        
+        tableView.reloadData()
+        
+        notesTextView.text = ""
     }
     /*
     // MARK: - Navigation
@@ -37,6 +50,7 @@ class NotesViewController: UIViewController { // , UITableViewDelegate {
     let noteController = NoteController()
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var notesTextView: UITextView!
 }
 
 extension NotesViewController: UITableViewDelegate {
