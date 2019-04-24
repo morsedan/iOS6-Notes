@@ -56,7 +56,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" id="HvO-sg-xbz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" id="HvO-sg-xbz" customClass="NoteTableViewCell" customModule="Notes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="192" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HvO-sg-xbz" id="n8o-CE-CEF">
@@ -75,6 +75,9 @@
                                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7I-zK-vP9">
                                                             <rect key="frame" x="334" y="0.0" width="40" height="22"/>
                                                             <state key="normal" title="Share"/>
+                                                            <connections>
+                                                                <action selector="shareButtonPressed:" destination="HvO-sg-xbz" eventType="touchUpInside" id="EVT-e8-Get"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -86,6 +89,9 @@
                                                 <constraint firstItem="S4t-jP-Uje" firstAttribute="leading" secondItem="n8o-CE-CEF" secondAttribute="leadingMargin" id="eFB-go-Bez"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="noteLabel" destination="MCo-75-iqs" id="Izx-lb-xIc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
