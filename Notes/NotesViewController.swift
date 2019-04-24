@@ -8,15 +8,22 @@
 
 import UIKit
 
-class NotesViewController: UIViewController {
+class NotesViewController: UIViewController { // , UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
     }
     
 
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        print("save")
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -27,4 +34,27 @@ class NotesViewController: UIViewController {
     }
     */
 
+    @IBOutlet var tableView: UITableView!
+}
+
+extension NotesViewController: UITableViewDelegate {
+
+}
+
+extension NotesViewController: UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
+        
+        cell.backgroundColor = .yellow
+        
+        return cell
+    }
 }
