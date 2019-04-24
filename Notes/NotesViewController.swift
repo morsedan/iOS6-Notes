@@ -43,7 +43,6 @@ extension NotesViewController: UITableViewDelegate {
 
 extension NotesViewController: UITableViewDataSource {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
